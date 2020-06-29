@@ -1,7 +1,7 @@
 <template>
   <div class="wrapp">
     <div class="popup">
-      <h2 class="popup-title">hi{{activePlayer}}</h2>
+      <h2 class="popup-title">Win {{activePlayer}}</h2>
     </div>
   </div>
 </template>
@@ -9,11 +9,7 @@
 <script>
 export default {
   name: "Popup",
-  props: {
-    activePlayer: {
-      type: String
-    }
-  },
+  props: ["activePlayer"],
 
   methods: {}
 };
