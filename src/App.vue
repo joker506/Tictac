@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Popup v-show="showPopup" :activePlayer="activePlayer" />
     <div class="wrapp">
       <TicTac name="1" @changeActive="listen($event)" />
       <TicTac name="2" @changeActive="listen($event)" />
@@ -16,10 +17,13 @@
 
 <script>
 import TicTac from "@/components/TicTac";
+import Popup from "@/components/Popup";
+
 export default {
   name: "App",
   components: {
-    TicTac
+    TicTac,
+    Popup
   },
   data() {
     return {
@@ -74,36 +78,51 @@ export default {
         this.showPopup = true;
         console.log("win X");
       } else if (_key[3] === "X" && _key[4] === "X" && _key[5] === "X") {
+        this.showPopup = true;
         console.log("win X");
       } else if (_key[6] === "X" && _key[7] === "X" && _key[8] === "X") {
+        this.showPopup = true;
         console.log("win X");
       } else if (_key[0] === "X" && _key[3] === "X" && _key[6] === "X") {
+        this.showPopup = true;
         console.log("win X");
       } else if (_key[1] === "X" && _key[4] === "X" && _key[7] === "X") {
+        this.showPopup = true;
         console.log("win X");
       } else if (_key[2] === "X" && _key[5] === "X" && _key[8] === "X") {
+        this.showPopup = true;
         console.log("win X");
       } else if (_key[0] === "X" && _key[4] === "X" && _key[8] === "X") {
+        this.showPopup = true;
         console.log("win X");
       } else if (_key[2] === "X" && _key[4] === "X" && _key[6] === "X") {
+        this.showPopup = true;
         console.log("win X");
       }
       //'Win 0'
       if (_key[0] === "0" && _key[1] === "0" && _key[2] === "0") {
+        this.showPopup = true;
         console.log("win 0");
       } else if (_key[3] === "0" && _key[4] === "0" && _key[5] === "0") {
+        this.showPopup = true;
         console.log("win 0");
       } else if (_key[6] === "0" && _key[7] === "0" && _key[8] === "0") {
+        this.showPopup = true;
         console.log("win 0");
       } else if (_key[0] === "0" && _key[3] === "0" && _key[6] === "0") {
+        this.showPopup = true;
         console.log("win 0");
       } else if (_key[1] === "0" && _key[4] === "0" && _key[7] === "0") {
+        this.showPopup = true;
         console.log("win 0");
       } else if (_key[2] === "0" && _key[5] === "0" && _key[8] === "0") {
+        this.showPopup = true;
         console.log("win 0");
       } else if (_key[0] === "0" && _key[4] === "0" && _key[8] === "0") {
+        this.showPopup = true;
         console.log("win 0");
       } else if (_key[2] === "0" && _key[4] === "0" && _key[6] === "0") {
+        this.showPopup = true;
         console.log("win 0");
       }
     }
