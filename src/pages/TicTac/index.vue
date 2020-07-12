@@ -1,16 +1,29 @@
 <template>
-  <div id="app">
-    <TicTac />
+  <div id="index">
+    <Popup v-show="showPopup" :activePlayer="activePlayer" />
+    <div class="wrapp">
+      <TicTac name="1" @changeActive="listen($event)" />
+      <TicTac name="2" @changeActive="listen($event)" />
+      <TicTac name="3" @changeActive="listen($event)" />
+      <TicTac name="4" @changeActive="listen($event)" />
+      <TicTac name="5" @changeActive="listen($event)" />
+      <TicTac name="6" @changeActive="listen($event)" />
+      <TicTac name="7" @changeActive="listen($event)" />
+      <TicTac name="8" @changeActive="listen($event)" />
+      <TicTac name="9" @changeActive="listen($event)" />
+    </div>
   </div>
 </template>
 
 <script>
-import TicTac from "@/pages/TicTac";
+import TicTac from "./components/TicTac";
+import Popup from "./components/Popup";
 
 export default {
   name: "App",
   components: {
-    TicTac
+    TicTac,
+    Popup
   },
   data() {
     return {
@@ -47,7 +60,6 @@ export default {
       for (let key in _obj) {
         if (key === event) {
           _obj[key] = this.activePlayer;
-          //console.log(_obj[key]);
         }
       }
       if (this.activePlayer === "X") {
@@ -118,7 +130,7 @@ export default {
 </script>
 
 <style>
-#app {
+#index {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
